@@ -17,12 +17,15 @@ func game() {
 	var win bool = false
 
 	fmt.Println("Start")
-	for round < 5 && !win {
+	for {
 		round++
 		fmt.Println("Round", round)
 		numGenerator(&computerNumber)
 		yourGuessing(&yourNumber)
 		process(&yourNumber, &computerNumber, &win)
+		if win || round > 4 {
+			break
+		}
 	}
 	conclusion(round, win)
 	fmt.Println("End")

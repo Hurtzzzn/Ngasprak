@@ -4,9 +4,9 @@ import "fmt"
 
 func main() {
 	var pilihan int
-	tampil_menu()
-	fmt.Scan(&pilihan)
-	for pilihan != 5 {
+	for {
+		tampil_menu()
+		fmt.Scan(&pilihan)
 		switch pilihan {
 		case 1:
 			fmt.Println("Hello")
@@ -17,10 +17,9 @@ func main() {
 		case 4:
 			fmt.Println("Good Night")
 		}
-		tampil_menu()
-		fmt.Scan(&pilihan)
 		if pilihan == 5 {
 			fmt.Println("Bye")
+			break
 		}
 	}
 }
